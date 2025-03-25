@@ -2,6 +2,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class FlightTimeCalculator {
+
+    static Flight flight;
+
+    public FlightTimeCalculator(Flight flight){
+       FlightTimeCalculator.flight =flight;
+    }
     private static final double SPEED_MPH = 450.0;
 
     public static String calculateFlightTime(double distanceInMiles) {
@@ -17,7 +23,7 @@ public class FlightTimeCalculator {
         return (mod < 8) ? datetime.minusMinutes(mod) : datetime.plusMinutes(15 - mod);
     }
 
-    public static String fetchArrivalTime(Flight flight) {
+    public static String fetchArrivalTime() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy, HH:mm a ");
         LocalDateTime departureTime = LocalDateTime.parse(flight.getFlightSchedule(), formatter);
 

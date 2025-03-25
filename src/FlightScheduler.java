@@ -4,6 +4,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 public class FlightScheduler {
@@ -40,6 +41,24 @@ public class FlightScheduler {
         date = FlightTimeCalculator.getNearestHourQuarter(date);
         return date.format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy, HH:mm a "));
     }
+
+
+    public void displayFlightSchedule() {
+
+        Iterator<Flight> flightIterator = flightList.iterator();
+        System.out.println();
+        System.out.print("+------+-------------------------------------------+-----------+------------------+-----------------------+------------------------+---------------------------+-------------+--------+------------------------+\n");
+        System.out.printf("| Num  | FLIGHT SCHEDULE\t\t\t   | FLIGHT NO | Available Seats  | \tFROM ====>>       | \t====>> TO\t   | \t    ARRIVAL TIME       | FLIGHT TIME |  GATE  |   DISTANCE(MILES/KMS)  |%n");
+        System.out.print("+------+-------------------------------------------+-----------+------------------+-----------------------+------------------------+---------------------------+-------------+--------+------------------------+\n");
+        int i = 0;
+        while (flightIterator.hasNext()) {
+            i++;
+            Flight f1 = flightIterator.next();
+            System.out.println(f1.toString(i));
+            System.out.print("+------+-------------------------------------------+-----------+------------------+-----------------------+------------------------+---------------------------+-------------+--------+------------------------+\n");
+        }
+    }
+
 
     public static List<Flight> getFlightList() {
         return flightList;
