@@ -6,7 +6,7 @@ public interface DisplayClass {
 
     void displayRegisteredUsersForASpecificFlight(String flightNum);
 
-    void displayHeaderForUsers(Flight flight, List<Customer> c);
+    void displayHeaderForUsers(FlightManager flight, List<Customer> c);
 
     void displayFlightsRegisteredByOneUser(String userID);
 

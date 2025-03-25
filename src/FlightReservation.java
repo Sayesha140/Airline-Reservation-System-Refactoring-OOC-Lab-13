@@ -249,8 +249,8 @@ public class FlightReservation implements DisplayClass {
     }
 
     void addNumberOfTicketsForNewFlight(Customer customer, int numOfTickets) {
-        //customer.getNumOfTicketsBookedByUser().add(numOfTickets);
-        customer.addNewTicketToNumOfTicketsBookedByUser(numOfTickets);
+        customer.getNumOfTicketsBookedByUser().add(numOfTickets);
+        //customer.addNewTicketToNumOfTicketsBookedByUser(numOfTickets);
     }
 
     boolean isFlightAlreadyAddedToCustomerList(List<Flight> flightList, Flight flight) {
