@@ -7,7 +7,7 @@ public class FlightDistance {
     private static final double RADIAN_TO_DEGREE_FACTOR = 180.0 / Math.PI;
     private static final double EARTH_DISTANCE_FACTOR = 60.0;
 
-    public String[] calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+    public static String[] calculateDistance(double lat1, double lon1, double lat2, double lon2) {
         double theta = lon1 - lon2;
         double distance = Math.sin(degreeToRadian(lat1)) * Math.sin(degreeToRadian(lat2)) +
                 Math.cos(degreeToRadian(lat1)) * Math.cos(degreeToRadian(lat2)) *
@@ -25,11 +25,11 @@ public class FlightDistance {
         return distanceString;
     }
 
-    private double degreeToRadian(double deg) {
+    private static double degreeToRadian(double deg) {
         return deg * DEGREE_TO_RADIAN_FACTOR;
     }
 
-    private double radianToDegree(double rad) {
+    private static double radianToDegree(double rad) {
         return rad * RADIAN_TO_DEGREE_FACTOR;
     }
 }
