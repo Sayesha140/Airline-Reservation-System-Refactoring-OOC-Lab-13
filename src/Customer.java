@@ -93,7 +93,7 @@ public class Customer {
      * @param i for serial numbers.
      * @return customers data in String
      */
-    private String toString(int i) {
+    public String toString(int i) {
         return String.format("%10s| %-10d | %-10s | %-32s | %-7s | %-27s | %-35s | %-23s |", "", i,
                 randomIDDisplay(userID), name, age, email, address, phone);
     }
