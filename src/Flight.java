@@ -237,7 +237,7 @@ public class Flight extends FlightDistance {
         }
     }
 
-    @Override
+
     public String toString(int i) {
         return String.format("| %-5d| %-41s | %-9s | \t%-9s | %-21s | %-22s | %-10s  |   %-6sHrs |  %-4s  |  %-8s / %-11s|", i, flightSchedule, flightNumber, numOfSeatsInTheFlight, fromWhichCity, toWhichCity, fetchArrivalTime(), flightTime, gate, distanceInMiles, distanceInKm);
     }
@@ -279,6 +279,8 @@ public class Flight extends FlightDistance {
         newDatetime = newDatetime.truncatedTo(ChronoUnit.MINUTES);
         return newDatetime;
     }
+
+
 
 
     //        ************************************************************ Setters & Getters ************************************************************
