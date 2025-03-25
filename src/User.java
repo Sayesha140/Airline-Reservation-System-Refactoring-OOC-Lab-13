@@ -33,7 +33,7 @@ public class User {
         f1.flightScheduler();
         Scanner read = new Scanner(System.in);
 
-       
+
         System.out.println(
                 "\n\t\t\t\t\t+++++++++++++ Welcome to BAV AirLines +++++++++++++\n\nTo Further Proceed, Please enter a value.");
         System.out.println(
@@ -60,7 +60,7 @@ public class User {
                 /* Default username and password.... */
                 adminUserNameAndPassword[0][0] = "root";
                 adminUserNameAndPassword[0][1] = "root";
-                
+
                 System.out.print("\nEnter the UserName to login to the Management System :     ");
                 String username = read1.nextLine();
                 System.out.print("Enter the Password to login to the Management System :    ");
@@ -105,14 +105,14 @@ public class User {
                         desiredOption = read.nextInt();
                         /* If 1 is entered by the privileged user, then add a new customer...... */
                         if (desiredOption == 1) {
-                           
+
                             c1.addNewCustomer();
                         } else if (desiredOption == 2) {
                             /*
                              * If 2 is entered by the privileged user, then call the search method of the
                              * Customer class
                              */
-                            
+
                             c1.displayCustomersData(false);
                             System.out.print("Enter the CustomerID to Search :\t");
                             String customerID = read1.nextLine();
@@ -124,7 +124,7 @@ public class User {
                              * Class with required
                              * arguments.....
                              */
-                            
+
                             c1.displayCustomersData(false);
                             System.out.print("Enter the CustomerID to Update its Data :\t");
                             String customerID = read1.nextLine();
@@ -383,4 +383,5 @@ public class User {
     public static List<Customer> getCustomersCollection() {
         return customersCollection;
     }
+
 }
