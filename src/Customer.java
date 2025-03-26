@@ -307,7 +307,7 @@ public class Customer {
     }
 
     public List<Integer> getNumOfTicketsBookedByUser() {
-        return numOfTicketsBookedByUser;
+        return Collections.unmodifiableList(numOfTicketsBookedByUser);
     }
 
     public void setName(String name) {
